@@ -1,24 +1,109 @@
-class Calculator
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculatorConsoleApp
 {
-	static void Main(string[] args)
-	{
-		int a = 10;
-		int b = 6;
-		
-		Console.WriteLine("Hasil Penambahan {0} + {1} = {2}", a, b, Pengurangan(a, b));
-		Console.WriteLine("Hasil Pengurangan {0} - {1} = {2}", a, b, Pengurangan(a, b));
-		
-		Console.WriteLine("\nTekan sembarang key untuk keluar");
-		Console.ReadKey();
-	}
-	
-	static int penambahan(int a, int b)
-	{
-	return a + b;
-	}
-	
-	static int pengurangan(int a, int b)
-	{
-	return a - b;
-	}
+    class Program01
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Program Aplikasi Calculator";
+
+            Console.WriteLine("Pilih menu Calculator");
+
+            Console.WriteLine();
+
+            Console.WriteLine("1.Penambahan");
+            Console.WriteLine("2.Pengurangan");
+            Console.WriteLine("3.Perkalian");
+            Console.WriteLine("4.Pembagian");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Masukan Pilihan :");
+
+            String userinput = Console.ReadLine();
+
+            Console.WriteLine("Isi input = " + userinput);
+            if (userinput.Equals("1"))
+            {
+                Console.Write("Inputkan nilai c = ");
+                int c = int.Parse(Console.ReadLine());
+
+                Console.Write("Inputkan nilai d = ");
+                int d = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine();
+
+                Console.WriteLine("Hasil Penambahan " + c + " + " + d + " = " + Penambahan(c, d));
+            
+            }
+            else if(userinput.Equals("2"))
+            {
+                Console.Write("Inputkan nilai c = ");
+                int c = int.Parse(Console.ReadLine());
+
+                Console.Write("Inputkan nilai d = ");
+                int d = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine();
+
+                Console.WriteLine("Hasil Pengurangan {0} - {1} = {2}", c, d, Pengurangan(c, d));
+            }
+            else if(userinput.Equals("3"))
+            {
+                Console.Write("Inputkan nilai c = ");
+                int c = int.Parse(Console.ReadLine());
+
+                Console.Write("Inputkan nilai d = ");
+                int d = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine();
+
+                Console.WriteLine("Hasil Perkalian {0} * {1} = {2}", c, d, Perkalian(c, d));
+            }
+            else if(userinput.Equals("4"))
+            {
+                Console.Write("Inputkan nilai c = ");
+                int c = int.Parse(Console.ReadLine());
+
+                Console.Write("Inputkan nilai d = ");
+                int d = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine();
+
+                Console.WriteLine("Hasil Pembagian {0} / {1} = {2}", c, d, Pembagian(c, d));
+            }
+            else
+            {
+                Console.WriteLine("Pilihan yang anda masukan tidak ada");
+            }
+			
+			Console.WriteLine("\nTekan Sembarang key untuk keluar");
+            Console.ReadKey();  
+        }
+
+        static int Penambahan(int c, int d)
+        {
+            return c + d;
+        }
+
+        static int Pengurangan(int c, int d)
+        {
+            return c - d;
+        }
+
+        static int Perkalian(int c, int d)
+        {
+            return c * d;
+        }
+
+        static int Pembagian(int c, int d)
+        {
+            return c / d;
+        }
+    }
 }
